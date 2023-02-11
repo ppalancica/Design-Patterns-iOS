@@ -1,0 +1,25 @@
+Singleton
+
+Apple docs:
+
+https://developer.apple.com/documentation/swift/managing-a-shared-resource-using-a-singleton
+
+class Singleton {
+    static let shared = Singleton()
+}
+
+class Singleton {
+    static let shared: Singleton = {
+        let instance = Singleton()
+        // setup code
+        return instance
+    }()
+}
+
+In practice:
+
+class NetworkManager {
+    static let instance = NetworkManager()    
+
+    private init() {}
+}
